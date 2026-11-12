@@ -4,14 +4,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reliable Reno | Home Renovations Done Right</title>
-<meta name="description" content="Reliable Reno - kitchens, bathrooms, extensions and full home renovations. Fixed quotes, on-time finishes, fully insured.">
+<meta name="description" content="Reliable Reno - Sydney renovation builders for kitchens, bathrooms, extensions and full home renovations. Fixed-price quotes, licensed and insured.">
+<meta name="theme-color" content="#23463a">
+<link rel="canonical" href="https://abhijeettg.github.io/reliable-reno/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='8' fill='%2323463a'/%3E%3Cpath d='M7 17 17 8l10 9v9H7z' fill='none' stroke='%23d9822b' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M13 26v-6h8v6' fill='none' stroke='%23fff' stroke-width='2.6'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reliable Reno | Sydney Home Renovations">
+<meta property="og:description" content="Kitchens, bathrooms, extensions and full home renovations across Sydney. Fixed-price quotes, licensed and insured.">
+<meta property="og:url" content="https://abhijeettg.github.io/reliable-reno/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=630&fit=crop&q=75">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000&q=75">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Reliable Reno",
+ "url":"https://abhijeettg.github.io/reliable-reno/","telephone":"+61400000000","email":"hello@reliablereno.com.au",
+ "areaServed":{"@type":"City","name":"Sydney"},
+ "address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"},
+ "openingHours":"Mo-Fr 07:00-17:00"}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#1d2421; --ink-soft:#4a544f; --paper:#f6f3ee; --card:#fff;
-  --green:#23463a; --green-dark:#17302792; --amber:#d9822b; --amber-dark:#b96a1c;
+  --green:#23463a; --amber:#d9822b; --amber-dark:#b96a1c;
   --line:#e2ddd4; --radius:14px;
   --gutter:clamp(16px,4vw,64px);
 }
@@ -35,7 +52,12 @@ section{padding-block:clamp(64px,9vw,120px)}
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(246,243,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:1rem}
-.logo{display:flex;align-items:center;gap:.6rem;font-family:Archivo;font-weight:800;font-size:1.3rem;text-decoration:none}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:Archivo;font-weight:800;font-size:1.3rem;text-decoration:none;white-space:nowrap}
+.btn{white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--amber);color:#fff;padding:.8rem 1.2rem;z-index:100;font-weight:600}
+.skip:focus{left:1rem;top:1rem}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+@media (max-width:520px){.nav-cta .btn{padding:.6rem 1rem;font-size:.9rem}.logo{font-size:1.1rem}}
 .logo svg{flex:none}
 .nav ul{display:flex;gap:2rem;list-style:none}
 .nav ul a{text-decoration:none;font-weight:500;color:var(--ink-soft)}
@@ -151,12 +173,47 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding-block:2.5rem;fon
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 footer .logo{color:#fff}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+/* service areas */
+.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:2.5rem}
+.area{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem}
+.area h3{font-size:1.1rem;margin-bottom:.3rem}
+.area p{color:var(--ink-soft);font-size:.92rem}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(2rem,6vw,6rem)}
+details{border-bottom:1px solid var(--line);padding:1.3rem 0}
+details:first-child{border-top:1px solid var(--line)}
+summary{font-family:Archivo;font-weight:700;font-size:1.12rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--amber);font-size:1.5rem;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--ink-soft);margin-top:.8rem;max-width:65ch}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+
+/* mobile call bar */
+.callbar{display:none}
+@media (max-width:640px){
+  .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 20px rgba(0,0,0,.15)}
+  .callbar a{padding:1rem;text-align:center;font-weight:600;text-decoration:none;color:#fff;background:var(--green)}
+  .callbar a+a{background:var(--amber)}
+  body{padding-bottom:56px}
+}
+
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;width:100%;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.12)}
+footer h4{color:#fff;font-family:Archivo;margin-bottom:.6rem}
+footer ul{list-style:none;display:grid;gap:.35rem}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+footer .legal{width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem;font-size:.85rem}
+@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
 <header>
   <nav class="nav wrap">
@@ -169,7 +226,8 @@ footer .logo{color:#fff}
       <li><a href="#why">Why us</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-cta">
       <a class="phone" href="tel:0400000000">0400 000 000</a>
@@ -192,17 +250,17 @@ footer .logo{color:#fff}
         <a class="btn btn-ghost" href="#projects">See our work</a>
       </div>
       <div class="hero-stats">
-        <div><b>15+</b><span>years building</span></div>
-        <div><b>400+</b><span>projects finished</span></div>
-        <div><b>7 yr</b><span>workmanship warranty</span></div>
+        <div><b>Free</b><span>site visit &amp; quote</span></div>
+        <div><b>Fixed</b><span>itemised pricing</span></div>
+        <div><b>1 day</b><span>reply to every enquiry</span></div>
       </div>
     </div>
   </section>
 
   <div class="trust">
     <div class="wrap">
-      <span>Registered building practitioner</span>
-      <span>Fully licensed &amp; insured</span>
+      <span>NSW licensed builder</span>
+      <span>Fully insured, incl. HBCF cover</span>
       <span>Fixed-price quotes</span>
       <span>Clean, tidy sites</span>
     </div>
@@ -258,7 +316,7 @@ footer .logo{color:#fff}
         <div class="points">
           <div class="point"><div class="ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><h3>Fixed-price quotes</h3><p>A detailed, itemised quote up front. No surprise variations at the end.</p></div></div>
           <div class="point"><div class="ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><h3>On-time finishes</h3><p>You get a written schedule and weekly updates, so you always know where things stand.</p></div></div>
-          <div class="point"><div class="ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3>Licensed &amp; insured</h3><p>Registered, fully insured and backed by a 7-year workmanship warranty.</p></div></div>
+          <div class="point"><div class="ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3>Licensed &amp; insured</h3><p>NSW licensed and fully insured, with Home Building Compensation cover on jobs over $20,000 and statutory warranties on all work.</p></div></div>
           <div class="point"><div class="ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h3>One point of contact</h3><p>Your project manager picks up the phone. Every time.</p></div></div>
         </div>
       </div>
@@ -279,12 +337,13 @@ footer .logo{color:#fff}
     </div>
   </section>
 
-  <section class="ba">
+  <!-- HIDDEN until real before/after photos of one job are added: put the after photo first, the before photo second, then remove "hidden" -->
+  <section class="ba" hidden>
     <div class="wrap">
       <div class="reveal">
         <p class="eyebrow">Before &amp; after</p>
         <h2>See the difference.</h2>
-        <p class="lead">Drag the slider to compare. Swap these images for your own project photos.</p>
+        <p class="lead">Drag the slider to compare the same room before and after we got to work.</p>
       </div>
       <div class="compare reveal" id="compare">
         <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1800&q=70" alt="Kitchen after renovation">
@@ -311,12 +370,48 @@ footer .logo{color:#fff}
     </div>
   </section>
 
-  <section id="reviews" class="why">
+  <section id="areas" class="why">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Where we work</p>
+        <h2>Renovating homes across Sydney.</h2>
+        <p class="lead">Based in Sydney and working across the metro area. Not sure if you're in range? Call us - if we can't help, we'll point you to someone who can.</p>
+      </div>
+      <div class="areas">
+        <div class="area reveal"><h3>Inner West</h3><p>Marrickville, Newtown, Leichhardt, Ashfield, Burwood</p></div>
+        <div class="area reveal"><h3>Eastern Suburbs</h3><p>Randwick, Coogee, Maroubra, Bondi, Paddington</p></div>
+        <div class="area reveal"><h3>North Shore &amp; Northern Districts</h3><p>Chatswood, Ryde, Epping, Hornsby, Lane Cove</p></div>
+        <div class="area reveal"><h3>Hills District</h3><p>Castle Hill, Baulkham Hills, Kellyville, Rouse Hill</p></div>
+        <div class="area reveal"><h3>Western Sydney</h3><p>Parramatta, Blacktown, Penrith, Liverpool</p></div>
+        <div class="area reveal"><h3>South &amp; the Shire</h3><p>Hurstville, Kogarah, Sutherland, Cronulla</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap faq-grid">
+      <div class="reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Good questions to ask a builder.</h2>
+        <p class="lead">Can't see yours? Call or send us a message and we'll answer it straight.</p>
+      </div>
+      <div class="reveal">
+        <details><summary>How much does a renovation cost?</summary><p>It depends on size, finishes and what's behind the walls. That's why we visit first: after the site visit you get a fixed, itemised quote, so you know the full price before any work starts.</p></details>
+        <details><summary>How much deposit do you take?</summary><p>Under NSW law the deposit for residential building work is capped at 10% of the contract price. After that you pay in stages as work is completed, as set out in your contract.</p></details>
+        <details><summary>Do I need council approval?</summary><p>Many internal renovations don't. Extensions and structural work usually need a Development Application (DA) or a Complying Development Certificate (CDC). We'll tell you which applies at the site visit and can manage the approval for you.</p></details>
+        <details><summary>How long will it take?</summary><p>As a rough guide, a bathroom takes 3-4 weeks and a kitchen 4-6 weeks once work starts. Extensions vary more. You'll get a written schedule with your quote.</p></details>
+        <details><summary>Can we keep living at home during the work?</summary><p>Usually, yes. We plan the job to keep at least one bathroom and the kitchen usable where possible, and we clean up at the end of every day.</p></details>
+        <details><summary>Are you licensed and insured?</summary><p>Yes. We hold a NSW contractor licence and public liability insurance, and jobs over $20,000 are covered by the Home Building Compensation Fund, as NSW law requires.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIDDEN until real client reviews are added (e.g. copied from Google reviews), then remove "hidden" and add "Reviews" back to the menu -->
+  <section id="reviews" class="why" hidden>
     <div class="wrap">
       <div class="section-head reveal">
         <div><p class="eyebrow">Reviews</p><h2>What our clients say.</h2></div>
       </div>
-      <!-- PLACEHOLDER: replace with real client reviews (e.g. copied from Google reviews) before going live -->
       <div class="reviews">
         <div class="review reveal"><div class="stars">★★★★★</div><p>"Replace this with a real client review - what the job was and how it went."</p><small>Client name - Suburb</small></div>
         <div class="review reveal"><div class="stars">★★★★★</div><p>"Replace this with a real client review - what the job was and how it went."</p><small>Client name - Suburb</small></div>
@@ -334,7 +429,7 @@ footer .logo{color:#fff}
         <ul class="contact-list">
           <li><span>Call</span><a href="tel:0400000000">0400 000 000</a></li>
           <li><span>Email</span><a href="mailto:hello@reliablereno.com.au">hello@reliablereno.com.au</a></li>
-          <li><span>Service area</span>Sydney &amp; surrounds</li>
+          <li><span>Service area</span><a href="#areas">Sydney metro</a></li>
           <li><span>Hours</span>Mon-Fri 7am-5pm, Sat by appointment</li>
         </ul>
       </div>
@@ -359,10 +454,28 @@ footer .logo{color:#fff}
 
 <footer>
   <div class="wrap">
-    <span class="logo">Reliable Reno</span>
-    <span>© <span id="yr"></span> Reliable Reno. Licensed &amp; insured builders. ABN 00 000 000 000</span>
+    <div class="cols">
+      <div>
+        <span class="logo">Reliable Reno</span>
+        <p style="margin-top:.6rem;max-width:38ch">Kitchens, bathrooms, extensions and full home renovations across Sydney.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#services">Kitchens</a></li><li><a href="#services">Bathrooms &amp; laundries</a></li><li><a href="#services">Extensions</a></li><li><a href="#services">Full renovations</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:0400000000">0400 000 000</a></li><li><a href="mailto:hello@reliablereno.com.au">hello@reliablereno.com.au</a></li><li>Mon-Fri 7am-5pm</li><li><a href="#quote">Request a quote</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Reliable Reno</span>
+      <span>NSW Contractor Licence No. 000000C · ABN 00 000 000 000</span>
+    </div>
   </div>
 </footer>
+
+<div class="callbar"><a href="tel:0400000000">Call now</a><a href="#quote">Free quote</a></div>
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
@@ -372,7 +485,7 @@ document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', ()
 
 // before/after slider
 const cmp = document.getElementById('compare');
-cmp.querySelector('input').addEventListener('input', e => cmp.style.setProperty('--pos', e.target.value + '%'));
+if (cmp) cmp.querySelector('input').addEventListener('input', e => cmp.style.setProperty('--pos', e.target.value + '%'));
 
 // fade sections in on scroll
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .12});
